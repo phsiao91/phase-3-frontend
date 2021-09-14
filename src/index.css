@@ -1,13 +1,160 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("https://cutewallpaper.org/21/investment-wallpapers/investment-background-in-2019-Dark-wallpaper-.jpg");
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  border: 2px solid var(--dark-turquoise);
+}
+
+.place-image {
+  position: relative;
+}
+
+.button {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  background-color: lightgray;
+  /* border: 2px solid #4CAF50 */
+}
+
+.button:hover {
+  background-color: grey;
+  color: white;
+}
+.buttonImg {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  background-color: lightgray;
+  border: 2px solid #4caf50;
+}
+.buttonImg:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.place-image img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.center {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.revcontainer {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.Login {
+  background-color: rgb(46, 146, 150);
+  width: 40%;
+  margin: 80px auto;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 5px solid #009688;
+  box-shadow: 0px 0px 0px 0px #3f51b5;
+}
+
+.input-field {
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid rgb(168, 168, 168);
+  width: 250px;
+  outline: none;
+}
+
+.container {
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  display: none;
+  background: #515da2;
+  opacity: 0.8;
+}
+
+h4 {
+  font-family: papyrus;
+}
+
+h1 {
+  color: red;
+  text-align: center;
+}
+
+.header img {
+  width: 1400px;
+  height: 400px;
+  background: #555;
+}
+
+.welcome {
+  color: #3f51b5;
+  text-align: center;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+.review-field {
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  padding: 10px 15px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid rgb(168, 168, 168);
+  text-align: justify;
+  font-size: larger;
 }
