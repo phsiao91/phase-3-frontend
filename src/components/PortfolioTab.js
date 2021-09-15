@@ -12,6 +12,8 @@ function PortfolioTab({ place, selectPlace, }) {
         postHistory(place)
     }
 
+    
+
     function postHistory(newHis){
         fetch('', {
           method: 'POST',

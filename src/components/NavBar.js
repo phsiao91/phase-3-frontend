@@ -14,7 +14,7 @@ function NavBar() {
                 <NavLink className="button" to="./portfolio">
                     Portfolio
                 </NavLink>
-                <NavLink className="button" to="./calendar">
+                <NavLink className="button" to="./cal">
                     Calendar
                 </NavLink>
                 <NavLink className="button" to="./reviews">
