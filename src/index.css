@@ -12,7 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.asset {
+  text-align: left;
+}
 .card {
   display: grid;
   grid-template-rows: auto 1fr auto;

@@ -52,7 +52,7 @@ function Reviews() {
      //POST to Gallery
 
   function postRev(newRev){
-    fetch('', {
+    fetch('http://localhost:9292/ratings', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
