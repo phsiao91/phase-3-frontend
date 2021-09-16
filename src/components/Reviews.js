@@ -18,13 +18,26 @@ function Reviews() {
     }
     useEffect(getReviews, [])
 
+    const fetchDelete = (clickedObj) => {
+        console.log(clickedObj)
+    
+        fetch(`http://localhost:9292/ratings/${clickedObj.id}`, {method: "DELETE"})
+    
+        let filterRevs = reviews.filter(eachRev => 
+          eachRev.id !== clickedObj.id)
+    
+          setReviews([...filterRevs])
+    
+      }
+
 
 
     const mapReviews = () => {
         let mappedReviews = reviews.map(eachReview =>{
             return(
                 <ReviewTab key={eachReview.id}
-                    review={eachReview}
+                    review = {eachReview}
+                    alertReview = {fetchDelete}
                 />
             )
         })
