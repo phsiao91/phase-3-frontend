@@ -8,7 +8,7 @@ function Reviews() {
     const [ reviews, setReviews ] = useState([])
 
     const getReviews = () => {
-        fetch("")
+        fetch("http://localhost:9292/ratings")
     .then(res => res.json())
     .then(fetchedReviews => {console.log(fetchedReviews)
 
@@ -52,7 +52,7 @@ function Reviews() {
      //POST to Gallery
 
   function postRev(newRev){
-    fetch('', {
+    fetch('http://localhost:9292/ratings', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -72,13 +72,13 @@ function Reviews() {
         <>
             <NavBar/>
 
-            <h2>Testimonials: </h2>
+            <h2>Investment Talks</h2>
 
             {mapReviews()}
             
 
             <form onSubmit={handleSubmit} class="revcontainer">
-                <h1 class="center">Leave a Review for us! </h1>
+                <h1 class="center">Buy it, review it! </h1>
                 <input className="review-field"
                 type="text"
                 id="review" 
