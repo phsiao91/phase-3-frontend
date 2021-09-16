@@ -29,6 +29,7 @@ function Portfolio (props) {
   const [ cryptoAssets, setCryptoAssets ] = useState( [] )
 
 
+
   const getMarketAssets = () => {
 
     const cryptoAssets = ["ethereum", "bitcoin", "aave", "bankless-dao"]
@@ -43,17 +44,19 @@ function Portfolio (props) {
       .then(tokenObj => {
             console.log(tokenObj.name)
             const localObj = {
-            "id": tokenObj.id,
+            "id": allTokensArray.length + 10,
             "name": tokenObj.name, 
-            "symbol": tokenObj.symbol,
             "price": tokenObj.market_data.current_price.usd,
-            "market_cap": tokenObj.market_data.market_cap.usd,
-            "price_24h": tokenObj.market_data.price_change_percentage_24h,
-            "market_cap_rank": tokenObj.market_cap_rank,
-            "total_supply": tokenObj.market_data.total_supply,
-            "image": tokenObj.image.large
+            "quantity": 100,
+            "in_portfolio": false
+            // "symbol": tokenObj.symbol,
+            // "market_cap": tokenObj.market_data.market_cap.usd,
+            // "price_24h": tokenObj.market_data.price_change_percentage_24h,
+            // "market_cap_rank": tokenObj.market_cap_rank,
+            // "total_supply": tokenObj.market_data.total_supply,
+            // "image": tokenObj.image.large
             }
-            
+            console.log(localObj)
             allTokensArray.push(localObj) 
 
           })                         
@@ -63,9 +66,46 @@ function Portfolio (props) {
 
   useEffect(getMarketAssets, [] )
 
+  const addAssetHandler = (newAsset) => {
+    console.log("I was clicked!!!")
+    console.log(newAsset)
+    const addFilter = assets.filter(object => object === newAsset) 
+    if(addFilter.length < 1) {addAsset(newAsset)} 
+  }
 
+  const addAsset = (assetObj) => {
+      console.log("PRE-POST: ",assetObj)
+    // fetch(`${process.env.REACT_APP_API_URL}/assets`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Accept: 'application/json'
+    //   },
+    //   body: JSON.stringify(object)
+    // })
+    //   .then(res => res.json())
+    //   .then(newAsset => {
+    //     setAssets(assets.concat(newAsset))
+    //     // history.push(`/assets/${newAsset.id}`)
+    //   });
+    const postObj = {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json" },
+            body: JSON.stringify({name: assetObj.name, price: assetObj.price, 
+            quantity: assetObj.quantity, in_portfolio: assetObj.in_portfolio    
+            })
+        }
+        
+        fetch('http://localhost:9292/assets', postObj)
+        .then(resp => resp.json())
+        .then(tokenObj =>
+            setAssets(assets.concat(tokenObj))
+        )
+  }
 
-
+  ////////////////////////////////////////////////////
     
     const mapAssets = () => {
         let mappedAssets = assets.map(eachAsset =>{
@@ -83,7 +123,7 @@ function Portfolio (props) {
             console.log(eachAsset.symbol)
             return(
                 <AssetCard key={eachAsset.id}
-                    asset={eachAsset}
+                    asset={eachAsset} addAssetHandler={addAssetHandler}
                 />
             )
         })

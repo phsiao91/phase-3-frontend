@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 
-function AssetCard({ asset }) {
+function AssetCard({ asset, addAssetHandler }) {
 
     // const [ history, setHistory ] = useState( [] )
 
@@ -58,14 +58,23 @@ function AssetCard({ asset }) {
 
     console.log("assetCard:", asset)
 
+    const buttonStyle = {
+        color: 'white',
+        fontSize: 10,
+        height: 30,
+        width: 60,
+        borderRadius: 1
+      };
+
     return(
-        <div className="card">
+        <div className="card" style={{display: 'inline-block'}}>
             <h2 className="asset">{asset.name} ({asset.symbol}):: Bought at ${asset.price}</h2>
             <li className="card">
                 {/* <button className="buttonImg" onClick={handleClick}>
                 </button> */}
                 <p></p>
             </li>
+            <button className="cardButton" onClick={()=>addAssetHandler(asset)} style={buttonStyle} >Add to Backend</button>
         </div>
     )
 }
