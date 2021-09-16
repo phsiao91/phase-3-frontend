@@ -176,5 +176,29 @@ export default [
     title: "Go to the gym",
     start: new Date(2015, 3, 14, 18, 30, 0),
     end: new Date(2015, 3, 14, 20, 0, 0)
-  }
+  },
+  {
+    id: 24,
+    title: "Bought ETH @$447",
+    start: new Date(2021, 8, 14, 18, 30, 0),
+    end: new Date(2021, 8, 14, 20, 0, 0)
+  },
+  {
+    id: 25,
+    title: "Watch for Tesla drop",
+    start: new Date(2021, 8, 18, 18, 30, 0),
+    end: new Date(2021, 8, 18, 20, 0, 0)
+  },
+  {
+    id: 26,
+    title: "Finish your blog!!",
+    start: new Date(2021, 8, 17, 18, 30, 0),
+    end: new Date(2021, 8, 17, 20, 0, 0)
+  },
+  {
+    id: 27,
+    title: "Sold BTC @$47,566",
+    start: new Date(2021, 8, 8, 18, 30, 0),
+    end: new Date(2021, 8, 8, 20, 0, 0)
+  },
 ];

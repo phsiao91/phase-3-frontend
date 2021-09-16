@@ -18,11 +18,13 @@ function Login(props) {
 
 
     return(
+        <div className="login-body">
         <div className="login-page">
-        <h1 class="center">breakFree </h1>
+            <div className="brand-logo"></div>
+            <h1 class="center">Investment Tracker</h1>
         
-        <form className="Login" onSubmit={handleSubmit} >
-            {/* onSubmit={handleSubmit} */}
+        
+        <form className="login" onSubmit={handleSubmit} >
             <h2>Log-in </h2>
             <label htmlFor="username"> Username </label>
             <input className="input-field" type="text" 
@@ -45,6 +47,7 @@ function Login(props) {
             </NavLink>
         </form>
         
+        </div>
         </div>
     )
 }
