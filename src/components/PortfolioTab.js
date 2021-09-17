@@ -34,18 +34,22 @@ function PortfolioTab({ asset, addAsset, removeAsset }) {
 
 
     return(
-        <div className="assetContainer" style={{display: 'inline-flex', verticalAlign: 'middle',width: '100%', marginLeft: '10%' }}>
-            <div className="assetNameDiv">
-                <h2 className="asset">{asset.name} | Quantity: {asset.quantity} | Price: ${asset.price}    </h2>
+        <div className="assetContainer">
+            <div className="innerAssetDiv">
+
+            <div className="leftDiv">
+                {addAsset ? <h2 className="asset">{asset.name} - Price: ${asset.price}</h2>
+                : <h2 className="asset">{asset.name} - Quantity: {asset.quantity} - Price: ${asset.price}</h2>}
             </div>
 
-            <div className="assetButtonDiv" >
+            <div className="rightDiv" >
                 <button className="addButton" onClick={addAsset ? ()=>addAsset(asset) 
                  : ()=>removeAsset(asset)}>
                 { (addAsset) ? "BUY" : "SELL"}
                 </button>
             </div>   
 
+            </div>
         </div>
     )
 }

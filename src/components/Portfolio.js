@@ -113,22 +113,36 @@ function Portfolio (props) {
     })
     
   }
+//   const [totalArray, setTotalArray] = useState([])
 
-     
+//   const portfolioTotal = (assets) => {
+//     const total = assets.map(asset => {
+//         if(asset.in_portfolio === true) {
+//             asset
+//         } 
+//         return total
+//     })
+// }
 
 
     return(
-        <div>
+        <div className="portfolioPage">
              <NavBar/>
 
-             <div id="divMarket">
-             <h2 className="welcome">The Market</h2>
-             {mapMarketAssets()}
+             <div id="divMarket" className="market">
+             <h3 className="welcome">The Market</h3>
+                <div className="divScroll">
+                {mapMarketAssets()}
+                </div>
              </div>
 
-             <h2 className="welcome">Start Investing {props.renderUser}!!!</h2>
+             <div id="divPortfolio" className="portfolio">
+             <h3 className="welcome">{props.renderUser}'s Portfolio</h3>
              {mapPortfolioAssets()}
-            
+             {/* <br/>
+             <h2 style={{textAlign: 'center', color: 'green'}} >Portfolio Total = ${portfolioTotal(assets)} </h2> */}
+
+             </div>
         </div>
     )
 }
