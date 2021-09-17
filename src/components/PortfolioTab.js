@@ -34,14 +34,17 @@ function PortfolioTab({ asset }) {
 
 
     return(
-        <>
-        <h2 className="asset">{asset.name}-Bought at ${asset.price}</h2>
-        <li className="card">
-            {/* <button className="buttonImg" onClick={handleClick}>
-            </button> */}
-            <p></p>
-        </li>
-        </>
+        <div className="assetContainer" style={{display: 'inline-block' }}>
+            <div className="assetNameDiv">
+                <h2 className="asset">{asset.name} | Quantity: {asset.quantity} | Price: ${asset.price}</h2>
+            </div>
+
+            <div className="assetButtonDiv">
+                {/* <button className="assetButton" onClick={handleClick}>
+                </button> */}
+            </div>   
+
+        </div>
     )
 }
 
