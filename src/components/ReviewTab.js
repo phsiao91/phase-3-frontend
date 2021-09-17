@@ -13,7 +13,8 @@ function ReviewTab ({ review, alertReview }) {
 
     return(
         <ol>
-            <h4>{review.user_id.name} said "{review.comment}" with a * {review.star_rating} * star rating!!</h4>
+            <h4>"{review.comment}"</h4>
+            <h4>User:{review.user_id}   gave  {review.star_rating}:star:️'s</h4>
             <button onClick={deleteReview}>Remove Review</button>
         </ol>
     )
