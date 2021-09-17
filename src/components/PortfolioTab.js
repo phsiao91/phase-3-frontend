@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 
-function PortfolioTab({ asset }) {
+function PortfolioTab({ asset, addAsset, removeAsset }) {
 
     // const [ history, setHistory ] = useState( [] )
 
@@ -34,14 +34,16 @@ function PortfolioTab({ asset }) {
 
 
     return(
-        <div className="assetContainer" style={{display: 'inline-block' }}>
+        <div className="assetContainer" style={{display: 'inline-flex', verticalAlign: 'middle',width: '100%', marginLeft: '10%' }}>
             <div className="assetNameDiv">
-                <h2 className="asset">{asset.name} | Quantity: {asset.quantity} | Price: ${asset.price}</h2>
+                <h2 className="asset">{asset.name} | Quantity: {asset.quantity} | Price: ${asset.price}    </h2>
             </div>
 
-            <div className="assetButtonDiv">
-                {/* <button className="assetButton" onClick={handleClick}>
-                </button> */}
+            <div className="assetButtonDiv" >
+                <button className="addButton" onClick={addAsset ? ()=>addAsset(asset) 
+                 : ()=>removeAsset(asset)}>
+                { (addAsset) ? "BUY" : "SELL"}
+                </button>
             </div>   
 
         </div>
