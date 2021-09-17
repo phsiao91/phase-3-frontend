@@ -50,11 +50,36 @@ function Portfolio (props) {
 
     const addAsset = (asset) => {
         asset.in_portfolio = true
+        updateAsset(asset)
     }
   
     const removeAsset = (asset) => {
         asset.in_portfolio = false
+        updateAsset(asset)
     }      
+
+    const updateAsset = (updatedAsset) => {
+        console.log(updatedAsset.name)
+    // newAsset.preventDefault()
+    let assetToUpdate = {
+        name: updatedAsset.name,
+        price: updatedAsset.price,
+        quantity: updatedAsset.quantity,
+        in_portfolio: updatedAsset.in_portfolio
+    }
+
+    fetch(`http://localhost:9292/assets/${updatedAsset.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(assetToUpdate)
+    })
+    .then (response => response.json())
+    .then(patchedAsset => { 
+        setAssets(assets.map((asset) => (asset.id === parseInt(patchedAsset.id) ? patchedAsset : asset))) 
+        })
+    }
 
 // const addNewCritterFrontendAndBackendProcess =(synthEvent)=>{
 //     console.log("In addNewCritterFrontendAndBackendProcess")  //
